@@ -1,0 +1,13 @@
+{
+  "name": "connect-database",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "samir",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.25.0",
+    "connect-utils":"*"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "connect-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
+  "author": "samir",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "connect-utils",
+    "connect-database",
+    "connect-email"
+  ],
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-database": "*",
+    "connect-utils": "*",
+    "connect-email": "*",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.4",
+    "yargs": "^17.6.0"
+  }
+}
