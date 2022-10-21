@@ -13,4 +13,27 @@ yargs.command({
   },
 });
 
+yargs.command({
+  command: "2",
+  describe: "2. Add Country table",
+  handler(argv) {
+    task.addCountryTable();
+  },
+});
+
+yargs.command({
+  command: "3",
+  describe: "3. Add State table",
+  handler(argv) {
+    task.addStateTable();
+  },
+});
+
+yargs.command({
+  command: "4",
+  describe: "4. Add Cities table",
+  handler(argv) {
+    task.addCitiesTable();
+  },
+});
 yargs.parse();
