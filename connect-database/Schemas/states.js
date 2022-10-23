@@ -39,7 +39,6 @@ const States = sequelize.define(
 States.hasMany(Cities, {
   onDelete: "RESTRICT",
   onUpdate: "RESTRICT",
-  foreignKey: { name: "state_id", field: "id" },
 });
-
+Cities.belongsTo(States);
 export { States };

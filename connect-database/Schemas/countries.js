@@ -75,12 +75,10 @@ const Countries = sequelize.define(
 Countries.hasMany(States, {
   onDelete: "RESTRICT",
   onUpdate: "RESTRICT",
-  foreignKey: { name: "country_id", field: "id" },
 });
 Countries.hasMany(Cities, {
   onDelete: "RESTRICT",
   onUpdate: "RESTRICT",
-  foreignKey: { name: "country_id", field: "id" },
 });
 States.belongsTo(Countries);
 Cities.belongsTo(Countries);
