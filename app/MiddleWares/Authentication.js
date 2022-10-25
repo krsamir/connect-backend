@@ -16,7 +16,7 @@ export const isAuthenticated = (req, res, next) => {
     console.log({ error: "Authentication Required. Please login again." });
     responseHandler(res, {
       message: "Authentication Required. Please login again.",
-      responseStatus: RESPONSE_STATUS.UNAUTHORIZED,
+      responseStatus: RESPONSE_STATUS.UNAUTHORIZED_401,
       status: 0,
       data: [],
     });

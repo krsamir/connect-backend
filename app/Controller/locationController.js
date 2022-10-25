@@ -8,14 +8,14 @@ locationController.getCountry = async (req, res) => {
   if (query.length === 0) {
     responseHandler(res, {
       message: "Please enter the query.",
-      responseStatus: RESPONSE_STATUS.OK,
+      responseStatus: RESPONSE_STATUS.OK_200,
       status: 1,
       data: [],
     });
   } else if (query.length < TEXT.MINIMUM_LENGTH) {
     responseHandler(res, {
       message: "Minimum length not met.",
-      responseStatus: RESPONSE_STATUS.OK,
+      responseStatus: RESPONSE_STATUS.OK_200,
       status: 1,
       data: [],
     });
@@ -51,7 +51,7 @@ locationController.getCountry = async (req, res) => {
       .then((response) => {
         responseHandler(res, {
           message: "",
-          responseStatus: RESPONSE_STATUS.OK,
+          responseStatus: RESPONSE_STATUS.OK_200,
           data: response,
           status: 1,
         });
