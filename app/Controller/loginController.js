@@ -142,10 +142,10 @@ loginController.login = async (req, res) => {
                 expiresIn: JWT_EXPIRATION_TIME,
               }
             );
+            res.cookie("sid", jwtToken, { path: "/" });
             res.send({
               status: 1,
               message: "Authenticated!!",
-              token: jwtToken,
             });
           } else {
             await Master.increment(
@@ -154,10 +154,12 @@ loginController.login = async (req, res) => {
                 where: { id: data.id },
               }
             );
+            res.clearCookie("sid", { path: "/" });
             res.send({ status: 0, message: "Invalid Credentials" });
           }
         }
       } else {
+        res.clearCookie("sid", { path: "/" });
         res.send({
           status: 0,
           message:
@@ -165,10 +167,12 @@ loginController.login = async (req, res) => {
         });
       }
     } else {
+      res.clearCookie("sid", { path: "/" });
       res.send({ status: 0, message: "Invalid Credentials" });
     }
   } catch (error) {
     console.log(error);
+    res.clearCookie("sid", { path: "/" });
     res.send({ status: 0, message: "Some Issue while logging in." });
   }
 };

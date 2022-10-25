@@ -14,6 +14,7 @@ export const isAuthenticated = (req, res, next) => {
     next();
   } catch (e) {
     console.log({ error: "Authentication Required. Please login again." });
+    res.clearCookie("sid", { path: "/" });
     responseHandler(res, {
       message: "Authentication Required. Please login again.",
       responseStatus: RESPONSE_STATUS.UNAUTHORIZED_401,
