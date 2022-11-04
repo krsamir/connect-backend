@@ -3,7 +3,7 @@ import sequelize from "connect-database";
 import { responseHandler, TEXT, RESPONSE_STATUS } from "connect-utils";
 const locationController = {};
 
-locationController.getCountry = async (req, res) => {
+locationController.getCountry = async (req, res, next) => {
   const query = req.body?.query ?? "";
   if (query.length === 0) {
     responseHandler(res, {
@@ -57,6 +57,7 @@ locationController.getCountry = async (req, res) => {
         });
       })
       .catch((e) => {
+        console.log(e);
         next(e);
       });
   }
